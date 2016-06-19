@@ -6,6 +6,9 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 
+/**
+ * @author Adam Tomaja (CyderCode)
+ */
 public class HttpClient {
 
 	public String downloadPageSource(String pageUrl) throws IOException {

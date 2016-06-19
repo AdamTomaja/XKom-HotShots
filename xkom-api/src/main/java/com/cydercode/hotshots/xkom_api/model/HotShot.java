@@ -3,6 +3,9 @@ package com.cydercode.hotshots.xkom_api.model;
 import java.math.BigDecimal;
 import java.util.Date;
 
+/**
+ * @author Adam Tomaja (CyderCode)
+ */
 public class HotShot {
 
 	public static class Builder {
