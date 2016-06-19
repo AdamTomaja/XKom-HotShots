@@ -23,6 +23,18 @@ public class DownloadTaskResult {
         this.type = type;
     }
 
+    public Type getType() {
+        return type;
+    }
+
+    public HotShot getHotShot() {
+        return hotShot;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
     @Override
     public String toString() {
         return "DownloadTaskResult{" +
