@@ -1,4 +1,4 @@
-package com.cydercode.hotshots.xkom_api;
+package com.cydercode.hotshots.xkom_api.model;
 
 import java.math.BigDecimal;
 import java.util.Date;

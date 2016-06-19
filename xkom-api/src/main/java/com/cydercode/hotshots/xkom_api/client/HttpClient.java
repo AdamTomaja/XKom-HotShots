@@ -1,4 +1,4 @@
-package com.cydercode.hotshots.xkom_api;
+package com.cydercode.hotshots.xkom_api.client;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,9 +12,7 @@ public class HttpClient {
 		StringBuilder result = new StringBuilder();
 		
 		URL url = new URL(pageUrl);
-		
-		System.out.println(url.toString());
-		
+
 		//Download page
 		InputStream inputStream = null;
 		BufferedReader bufferedReader;

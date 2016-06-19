@@ -1,4 +1,4 @@
-package com.cydercode.hotshots.xkom_api;
+package com.cydercode.hotshots.xkom_api.client;
 
 public class XKomClientException extends RuntimeException {
 
@@ -6,5 +6,9 @@ public class XKomClientException extends RuntimeException {
 
 	public XKomClientException(String message, Throwable cause) {
 		super(message, cause);
+	}
+
+	public XKomClientException(String arg0) {
+		super(arg0);
 	}
 }
