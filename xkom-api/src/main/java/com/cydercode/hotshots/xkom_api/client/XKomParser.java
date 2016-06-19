@@ -25,7 +25,6 @@ public class XKomParser {
 	
 	private BigDecimal parseBigInteger(String textWithPlnLetters) {
 		String substring = textWithPlnLetters.substring(0, textWithPlnLetters.length() - 3);
-		System.out.println(substring);
 		return new BigDecimal(substring.replace(",", "."));
 	}
 	
