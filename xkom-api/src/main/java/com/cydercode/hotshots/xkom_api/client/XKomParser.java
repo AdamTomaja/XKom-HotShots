@@ -30,10 +30,16 @@ public class XKomParser {
 		hotShotBuilder.withDiscountPercent(parsePercent(getTextFromCssClass(doc, DISCOUNT_VALUE_CLASS_NAME)));
 		hotShotBuilder.withOldPrice(parseBigInteger(getTextFromCssClass(doc, OLD_PRICE_CLASS_NAME)));
 		hotShotBuilder.withNewPrice(parseBigInteger(getTextFromCssClass(doc, NEW_PRICE_CLASS_NAME)));
-
+		hotShotBuilder.withImageUrl(parseImageUrl(doc));
  		return hotShotBuilder.build();
 	}
 	
+	private String parseImageUrl(Document doc) {
+		Elements elements = doc.select("#hotShot .img-responsive");
+		ensureElementExists(elements, "image-url");
+		return elements.first().attr("src");
+	}
+
 	private BigDecimal parseBigInteger(String textWithPlnLetters) {
 		String substring = textWithPlnLetters.substring(0, textWithPlnLetters.length() - 3);
 		return new BigDecimal(substring.replace(COMMA, DOT));

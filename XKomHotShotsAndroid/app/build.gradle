@@ -29,7 +29,7 @@ android {
 }
 
 dependencies {
-    compile 'com.cydercode.hotshots:xkom-api:0.0.1-SNAPSHOT'
+    compile 'com.cydercode.hotshots:xkom-api:1.2'
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.3.0'

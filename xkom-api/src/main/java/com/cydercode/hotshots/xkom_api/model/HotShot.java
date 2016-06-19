@@ -29,6 +29,11 @@ public class HotShot {
 			shot.newPrice = newPrice;
 			return this;
 		}
+		
+		public Builder withImageUrl(String imageUrl) {
+			shot.imageUrl = imageUrl;
+			return this;
+		}
 
 		public Builder withDiscountPercent(Integer discountPercent) {
 			shot.discountPercent = discountPercent;
@@ -46,6 +51,7 @@ public class HotShot {
 	}
 
 	private String productName;
+	private String imageUrl;
 	private BigDecimal oldPrice;
 	private BigDecimal newPrice;
 	private Integer discountPercent;
@@ -74,10 +80,14 @@ public class HotShot {
 		return endDate;
 	}
 
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
 	@Override
 	public String toString() {
-		return "HotShot [productName=" + productName + ", oldPrice=" + oldPrice + ", newPrice=" + newPrice
-				+ ", discountPercent=" + discountPercent + ", endDate=" + endDate + "]";
+		return "HotShot [productName=" + productName + ", imageUrl=" + imageUrl + ", oldPrice=" + oldPrice
+				+ ", newPrice=" + newPrice + ", discountPercent=" + discountPercent + ", endDate=" + endDate + "]";
 	}
 
 	public static Builder createBuilder() {
