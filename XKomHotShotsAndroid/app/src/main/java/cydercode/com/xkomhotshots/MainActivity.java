@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cydercode.hotshots.xkom_api.client.XKomClient;
+import com.cydercode.hotshots.xkom_api.model.HotShot;
 import com.koushikdutta.urlimageviewhelper.UrlImageViewHelper;
 
 import java.io.PrintWriter;
@@ -27,13 +28,24 @@ public class MainActivity extends AppCompatActivity implements DownloadTaskListe
 
     @Override
     public void onResult(DownloadTaskResult result) {
-        final TextView view = (TextView) findViewById(R.id.outputTextView);
         final ImageView imageView = (ImageView) findViewById(R.id.imageView);
         if(result.getType() == DownloadTaskResult.Type.OK) {
-            view.setText(result.getHotShot().toString());
-            UrlImageViewHelper.setUrlDrawable(imageView, result.getHotShot().getImageUrl());
+            final HotShot hotShot = result.getHotShot();
+            setText(R.id.productName, hotShot.getProductName());
+            setText(R.id.oldPrice, hotShot.getOldPrice());
+            setText(R.id.newPrice, hotShot.getNewPrice());
+            setText(R.id.discount, hotShot.getDiscount());
+            setText(R.id.endHour, hotShot.getEndHour());
+
+            UrlImageViewHelper.setUrlDrawable(imageView,  hotShot.getImageUrl());
         } else {
-            view.setText("Error: " + result.getMessage());
+            setText(R.id.productName, "Error: " + result.getMessage());
         }
     }
+
+    private void setText(int id, String text) {
+        ((TextView) findViewById(id)).setText(text);
+    }
+
+
 }
