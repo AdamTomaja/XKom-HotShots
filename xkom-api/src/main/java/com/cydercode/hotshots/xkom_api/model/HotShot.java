@@ -1,6 +1,5 @@
 package com.cydercode.hotshots.xkom_api.model;
 
-import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -20,12 +19,12 @@ public class HotShot {
 			return this;
 		}
 
-		public Builder withOldPrice(BigDecimal oldPrice) {
+		public Builder withOldPrice(String oldPrice) {
 			shot.oldPrice = oldPrice;
 			return this;
 		}
 
-		public Builder withNewPrice(BigDecimal newPrice) {
+		public Builder withNewPrice(String newPrice) {
 			shot.newPrice = newPrice;
 			return this;
 		}
@@ -35,8 +34,8 @@ public class HotShot {
 			return this;
 		}
 
-		public Builder withDiscountPercent(Integer discountPercent) {
-			shot.discountPercent = discountPercent;
+		public Builder withDiscount(String discountPercent) {
+			shot.discount = discountPercent;
 			return this;
 		}
 
@@ -52,9 +51,9 @@ public class HotShot {
 
 	private String productName;
 	private String imageUrl;
-	private BigDecimal oldPrice;
-	private BigDecimal newPrice;
-	private Integer discountPercent;
+	private String oldPrice;
+	private String newPrice;
+	private String discount;
 	private Date endDate;
 
 	private HotShot() {
@@ -64,16 +63,16 @@ public class HotShot {
 		return productName;
 	}
 
-	public BigDecimal getOldPrice() {
+	public String getOldPrice() {
 		return oldPrice;
 	}
 
-	public BigDecimal getNewPrice() {
+	public String getNewPrice() {
 		return newPrice;
 	}
 
-	public Integer getDiscountPercent() {
-		return discountPercent;
+	public String getDiscount() {
+		return discount;
 	}
 
 	public Date getEndDate() {
@@ -87,7 +86,7 @@ public class HotShot {
 	@Override
 	public String toString() {
 		return "HotShot [productName=" + productName + ", imageUrl=" + imageUrl + ", oldPrice=" + oldPrice
-				+ ", newPrice=" + newPrice + ", discountPercent=" + discountPercent + ", endDate=" + endDate + "]";
+				+ ", newPrice=" + newPrice + ", discount=" + discount + ", endDate=" + endDate + "]";
 	}
 
 	public static Builder createBuilder() {
