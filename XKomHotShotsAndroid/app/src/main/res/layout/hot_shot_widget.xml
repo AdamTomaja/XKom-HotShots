@@ -18,4 +18,20 @@
         android:textSize="24sp"
         android:textStyle="bold|italic" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Odśwież "
+        android:id="@+id/reloadButton"
+        android:layout_below="@+id/appwidget_text"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Więcej"
+        android:id="@+id/moreButton"
+        android:layout_below="@+id/reloadButton"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>
