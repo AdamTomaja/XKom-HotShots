@@ -2,15 +2,12 @@ package cydercode.com.xkomhotshots;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.cydercode.hotshots.xkom_api.client.XKomClient;
 import com.cydercode.hotshots.xkom_api.model.HotShot;
 import com.koushikdutta.urlimageviewhelper.UrlImageViewHelper;
-
-import java.io.PrintWriter;
 
 /**
  * Created by Adam Tomaja (CyderCode) on 2016-06-19.
@@ -22,7 +19,6 @@ public class MainActivity extends AppCompatActivity implements DownloadTaskListe
         super.onCreate(savedInstanceState);
 
         new DownloadTask(this).execute();
-
         setContentView(R.layout.activity_main);
     }
 
@@ -38,6 +34,8 @@ public class MainActivity extends AppCompatActivity implements DownloadTaskListe
             setText(R.id.endHour, hotShot.getEndHour());
 
             UrlImageViewHelper.setUrlDrawable(imageView,  hotShot.getImageUrl());
+            setViewVisibility(R.id.dataLayout, View.VISIBLE);
+            setViewVisibility(R.id.progressLayout, View.GONE);
         } else {
             setText(R.id.productName, "Error: " + result.getMessage());
         }
@@ -45,6 +43,10 @@ public class MainActivity extends AppCompatActivity implements DownloadTaskListe
 
     private void setText(int id, String text) {
         ((TextView) findViewById(id)).setText(text);
+    }
+
+    private void setViewVisibility(int id, int visibility) {
+        ((View) findViewById(id)).setVisibility(visibility);
     }
 
 
