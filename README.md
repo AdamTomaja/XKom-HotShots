@@ -2,4 +2,5 @@
 Android application to display current hot-shot promotion in X-Kom shop
 
 # Screenshot
-![Screen view of application](https://raw.githubusercontent.com/AdamTomaja/XKom-HotShots/master/XKomHotShotsAndroid/view.png)
+![Screen view of application](https://raw.githubusercontent.com/AdamTomaja/XKom-HotShots/master/XKomHotShotsAndroid/views/main.png)
+![Widget view](https://raw.githubusercontent.com/AdamTomaja/XKom-HotShots/master/XKomHotShotsAndroid/views/widget.png)
