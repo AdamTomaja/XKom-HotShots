@@ -37,7 +37,9 @@ public class MainActivity extends AppCompatActivity implements DownloadTaskListe
             setViewVisibility(R.id.dataLayout, View.VISIBLE);
             setViewVisibility(R.id.progressLayout, View.GONE);
         } else {
-            setText(R.id.productName, "Error: " + result.getMessage());
+            setText(R.id.errorTextView, result.getMessage());
+            setViewVisibility(R.id.errorLayout, View.VISIBLE);
+            setViewVisibility(R.id.progressLayout, View.GONE);
         }
     }
 
