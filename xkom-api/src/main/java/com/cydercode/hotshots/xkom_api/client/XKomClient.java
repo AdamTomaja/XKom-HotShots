@@ -1,5 +1,6 @@
 package com.cydercode.hotshots.xkom_api.client;
 
+import com.cydercode.hotshots.xkom_api.client.parser.XKomParser;
 import com.cydercode.hotshots.xkom_api.model.HotShot;
 
 /**

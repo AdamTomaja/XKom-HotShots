@@ -1,7 +1,5 @@
 package com.cydercode.hotshots.xkom_api.model;
 
-import java.util.Date;
-
 /**
  * @author Adam Tomaja (CyderCode)
  */
@@ -39,8 +37,8 @@ public class HotShot {
 			return this;
 		}
 
-		public Builder withEndDate(Date endDate) {
-			shot.endDate = endDate;
+		public Builder withEndHour(String string) {
+			shot.endHour = string;
 			return this;
 		}
 
@@ -54,7 +52,7 @@ public class HotShot {
 	private String oldPrice;
 	private String newPrice;
 	private String discount;
-	private Date endDate;
+	private String endHour;
 
 	private HotShot() {
 	}
@@ -75,8 +73,8 @@ public class HotShot {
 		return discount;
 	}
 
-	public Date getEndDate() {
-		return endDate;
+	public String getEndHour() {
+		return endHour;
 	}
 
 	public String getImageUrl() {
@@ -86,7 +84,7 @@ public class HotShot {
 	@Override
 	public String toString() {
 		return "HotShot [productName=" + productName + ", imageUrl=" + imageUrl + ", oldPrice=" + oldPrice
-				+ ", newPrice=" + newPrice + ", discount=" + discount + ", endDate=" + endDate + "]";
+				+ ", newPrice=" + newPrice + ", discount=" + discount + ", endHour=" + endHour + "]";
 	}
 
 	public static Builder createBuilder() {

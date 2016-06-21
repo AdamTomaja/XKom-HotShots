@@ -1,9 +1,10 @@
-package com.cydercode.hotshots.xkom_api.client;
+package com.cydercode.hotshots.xkom_api.client.parser;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
+import com.cydercode.hotshots.xkom_api.client.XKomClientException;
 import com.cydercode.hotshots.xkom_api.model.HotShot;
 import com.cydercode.hotshots.xkom_api.model.HotShot.Builder;
 
@@ -27,6 +28,7 @@ public class XKomParser {
 		hotShotBuilder.withOldPrice(getTextFromCssClass(doc, OLD_PRICE_CLASS_NAME));
 		hotShotBuilder.withNewPrice(getTextFromCssClass(doc, NEW_PRICE_CLASS_NAME));
 		hotShotBuilder.withImageUrl(parseImageUrl(doc));
+		hotShotBuilder.withEndHour(EndHourExtractor.extract(pageSource));
  		return hotShotBuilder.build();
 	}
 	
