@@ -8,7 +8,7 @@ import com.cydercode.hotshots.xkom_api.model.HotShot;
  */
 public class XKomClient {
 
-	private static final String PAGE_URL = "http://x-kom.pl";
+	public static final String PAGE_URL = "http://x-kom.pl";
 	
 	private final HttpClient client = new HttpClient();
 	private final XKomParser parser = new XKomParser();

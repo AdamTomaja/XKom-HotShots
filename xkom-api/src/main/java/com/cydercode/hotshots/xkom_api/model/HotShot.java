@@ -41,6 +41,11 @@ public class HotShot {
 			shot.endHour = string;
 			return this;
 		}
+		
+		public Builder withUrl(String url) {
+			shot.url = url;
+			return this;
+		}
 
 		public HotShot build() {
 			return shot;
@@ -53,6 +58,7 @@ public class HotShot {
 	private String newPrice;
 	private String discount;
 	private String endHour;
+	private String url;
 
 	private HotShot() {
 	}
@@ -80,11 +86,19 @@ public class HotShot {
 	public String getImageUrl() {
 		return imageUrl;
 	}
+	
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
 
 	@Override
 	public String toString() {
 		return "HotShot [productName=" + productName + ", imageUrl=" + imageUrl + ", oldPrice=" + oldPrice
-				+ ", newPrice=" + newPrice + ", discount=" + discount + ", endHour=" + endHour + "]";
+				+ ", newPrice=" + newPrice + ", discount=" + discount + ", endHour=" + endHour + ", url=" + url + "]";
 	}
 
 	public static Builder createBuilder() {

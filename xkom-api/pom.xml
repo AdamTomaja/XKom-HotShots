@@ -4,7 +4,7 @@
 
 	<groupId>com.cydercode.hotshots</groupId>
 	<artifactId>xkom-api</artifactId>
-	<version>1.4</version>
+	<version>1.5</version>
 	<packaging>jar</packaging>
 
 	<name>xkom-api</name>
