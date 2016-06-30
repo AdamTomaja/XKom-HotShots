@@ -1,5 +1,7 @@
 package cydercode.com.xkomhotshots;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -24,23 +26,38 @@ public class MainActivity extends AppCompatActivity implements DownloadTaskListe
 
     @Override
     public void onResult(DownloadTaskResult result) {
-        final ImageView imageView = (ImageView) findViewById(R.id.imageView);
         if(result.getType() == DownloadTaskResult.Type.OK) {
             final HotShot hotShot = result.getHotShot();
-            setText(R.id.productName, hotShot.getProductName());
-            setText(R.id.oldPrice, hotShot.getOldPrice());
-            setText(R.id.newPrice, hotShot.getNewPrice());
-            setText(R.id.discount, hotShot.getDiscount());
-            setText(R.id.endHour, hotShot.getEndHour());
-
-            UrlImageViewHelper.setUrlDrawable(imageView,  hotShot.getImageUrl());
-            setViewVisibility(R.id.dataLayout, View.VISIBLE);
-            setViewVisibility(R.id.progressLayout, View.GONE);
+            showHotShot(hotShot);
         } else {
             setText(R.id.errorTextView, result.getMessage());
             setViewVisibility(R.id.errorLayout, View.VISIBLE);
             setViewVisibility(R.id.progressLayout, View.GONE);
         }
+    }
+
+    private void showHotShot(final HotShot hotShot) {
+        final ImageView imageView = (ImageView) findViewById(R.id.imageView);
+        setText(R.id.productName, hotShot.getProductName());
+        setText(R.id.oldPrice, hotShot.getOldPrice());
+        setText(R.id.newPrice, hotShot.getNewPrice());
+        setText(R.id.discount, hotShot.getDiscount());
+        setText(R.id.endHour, hotShot.getEndHour());
+
+        View.OnClickListener onClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(hotShot.getUrl()));
+                startActivity(browserIntent);
+            }
+        };
+
+        ((TextView) findViewById(R.id.productName)).setOnClickListener(onClickListener);
+        imageView.setOnClickListener(onClickListener);
+
+        UrlImageViewHelper.setUrlDrawable(imageView,  hotShot.getImageUrl());
+        setViewVisibility(R.id.dataLayout, View.VISIBLE);
+        setViewVisibility(R.id.progressLayout, View.GONE);
     }
 
     private void setText(int id, String text) {

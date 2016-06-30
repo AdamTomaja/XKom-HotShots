@@ -27,7 +27,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Słuchawki"
-            android:id="@+id/productName" />
+            android:id="@+id/productName"
+            android:textColor="@color/accent_material_light"
+            android:textSize="@dimen/abc_action_button_min_width_overflow_material" />
 
         <TextView
             android:layout_width="wrap_content"
